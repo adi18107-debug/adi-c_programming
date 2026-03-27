@@ -30,11 +30,16 @@ void main()
         printf("Comparison of strings: %d\n", strcmp(str1, "hello"));
         break;
     case 4:
-        if (isPalindrome(str1))
-            printf("String is a palindrome\n");
-        else
-            printf("String is not a palindrome\n");
-        break;
+        len=strlen(str1);
+        for(i=len-1;i>=0;i--)
+        {
+            if(str1[i]!=str1[len-1-i])
+            {
+                printf("Not a palindrome\n");
+                return;
+            }
+        }
+        printf("String is a palindrome\n");
     case 5:
         printf("Substring check: %d\n", strstr(str1, "hello") != NULL);
         break;
